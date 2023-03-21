@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping
+DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping3.0.dtd">
+<hibernate-mapping>
+    <class name="es.albarregas.beans.Obra" table="obra1an">
+        <id column="idObra" name="idObra">
+            <generator class="identity"/>
+        </id>
+        <property name="nombre">
+            <column length="20" name="nombre" not-null="true" />
+        </property>
+        <property name="tecnica">
+            <column length="20" name="tecnica" not-null="true" />
+        </property>
+        <property name="dimensiones">
+            <column length="20" name="dimensiones" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
+z
