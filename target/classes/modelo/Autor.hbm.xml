@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping
+DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping3.0.dtd">
+<hibernate-mapping>
+    <class name="es.albarregas.beans.Autor" table="Autor1an"
+           dynamic-update="true">
+        <id column="idAutor" name="idAutor" type="java.lang.Integer">
+            <generator class="identity"/>
+        </id>
+        <property name="nombre">
+            <column length="20" name="nombre" not-null="true" />
+        </property>
+        <property name="ape1">
+            <column length="20" name="ape1" not-null="true" />
+        </property>
+        <property name="ape2">
+            <column length="20" name="ape2"/>
+        </property>
+        <property name="estilo">
+            <column length="20" name="estilo" not-null="true" />
+        </property>
+        <property name="fecha"  type="date" />
+        <set name="obraList" cascade="save-update, delete-orphan"
+             fetch="join" lazy="false">
+            <key>
+                <column name="idAutor" />
+            </key>
+            <one-to-many class="es.albarregas.beans.Obra"/>
+        </set>
+    </class>
+</hibernate-mapping>
